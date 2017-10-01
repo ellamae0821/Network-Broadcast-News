@@ -7,7 +7,7 @@ var name ;
 
 const client = net.connect({port: 6969}, () => {
   console.log('Now Connected!');
-
+c
 //  socket.emit('connect', username);
 
 //  client.write('Enter You Username:');
@@ -25,7 +25,7 @@ const client = net.connect({port: 6969}, () => {
 
 
 const server = new net.Socket();
-server.connect(PORT, '10.0.1.161', () => {
+server.connect(PORT, /*'10.0.1.161',*/ () => {
   console.log(`Connected to server at ${PORT}`);
 
 /*  server.on('data', (data)=> {

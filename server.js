@@ -48,7 +48,8 @@ const broadcast = (sender, message ) => clients
   .filter(c =>
     c !== sender)
   .forEach(c => {
-    c.write(message);
+    let username = (sender.username).replace(/\n$/, '');
+    c.write(username + ": " + message);
   });
 
 
@@ -71,7 +72,8 @@ const server = net.createServer((client)=> {
         }else{
             broadcast(client, data.toString());
 //            console.log(client.username + ":" + data.toString());
-            console.log(`${client.username}: ${data.toString()}`);
+            let username = (client.username).replace(/\n$/, '');
+            console.log(`${username}: ${data.toString()}`);
         }
 
          //   client.write(data);
